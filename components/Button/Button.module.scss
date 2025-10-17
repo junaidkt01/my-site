@@ -1,0 +1,36 @@
+.button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.primary_button {
+  background-color: white;
+  height: fit-content;
+  padding: 13px 40px;
+  border-radius: 30px;
+  border: 1px solid #000000;
+
+  // font-family: Brockmann;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #00000080;
+  cursor: pointer;
+
+  transition: all .3s ease;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}

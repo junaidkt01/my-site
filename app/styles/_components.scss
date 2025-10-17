@@ -1,0 +1,37 @@
+.header {
+    backdrop-filter: blur(25px);
+    background-color: #24242466;
+
+    width: fit-content;
+    border-radius: 15px;
+
+    height: 57px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-self: center;
+
+    position: fixed;
+    top: 45px;
+    z-index: 999;
+
+    .logo_icon {
+        height: 100%;
+
+        display: flex;
+        align-items: self-start;
+    }
+
+    .navlinks {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        .navlink {
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+    }
+}
