@@ -73,7 +73,7 @@ export const DescTexts = ({ desc, color }: { desc: string; color: string }) => {
 
 
 
-export const ServicesTitle = () => {
+export const ServicesTitle = ({ title }: { title: string }) => {
     return (
         <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -90,7 +90,7 @@ export const ServicesTitle = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
-                className="block" >TURNKEY RESIDENCES</motion.span>
+                className="block" >{title}</motion.span>
         </motion.h2>
     )
 }

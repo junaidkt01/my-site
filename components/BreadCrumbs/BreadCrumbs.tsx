@@ -2,10 +2,10 @@ import styles from './BreadCrumbs.module.scss';
 
 import React from 'react'
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ title }: { title: string }) => {
     return (
         <div className={styles.bread_crumbs} >
-            <h2>ABOUT US  /</h2>
+            <h2>{title}  /</h2>
         </div>
     )
 }
