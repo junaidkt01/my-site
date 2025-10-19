@@ -29,68 +29,15 @@ const Home = () => {
         <Services />
       </div>
 
-      {/* <div className="home_reveiw_count_section" >
-        <OverlayCountSection content_1={"HOMES DELIVERED"} content_2={"YEARS IN INDUSTRY"} content_3={"COUNTRY’S NRI CLIENTS"} />
+      <div className="home_reveiw_count_section" >
+        <OverlayCountSection
+          content_1={"HOMES DELIVERED"}
+          content_2={"YEARS IN INDUSTRY"}
+          content_3={"COUNTRY’S NRI CLIENTS"}
+        />
+      </div>
 
-        <div style={{ backgroundColor: "red" }} >
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-          <h1 className='text-black' >helo</h1>
-        </div>
-      </div> */}
+
     </div>
   )
 }

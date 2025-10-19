@@ -72,24 +72,33 @@ export const OverlayCountSection = ({ content_1, content_2, content_3 }: { conte
     const height5 = useTransform(smoothScroll, [0, 1], ['0vh', '10vh']);
 
     return (
-        <section ref={ref} className="overlay-section-wrapper" style={{ maxHeight: "calc(100vh + 200px)", backgroundColor: "red" }} >
+        <section ref={ref} className="overlay-section-wrapper" style={{ maxHeight: "calc(100vh + 300px)", backgroundColor: "" }} >
             <div className="bars" style={{ backgroundColor: "" }} >
-                <motion.div className="bar bar_1" style={{ height: height1, backgroundColor: "black" }} />
-                <motion.div className="bar bar_2" style={{ height: height2, backgroundColor: "black" }} />
-                <motion.div className="bar bar_3" style={{ height: height3, backgroundColor: "black" }} />
-                <motion.div className="bar bar_4" style={{ height: height4, backgroundColor: "black" }} />
-                <motion.div className="bar bar_5" style={{ height: height5, backgroundColor: "black" }} />
-                <motion.div className="bar bar_5" style={{ height: height5, backgroundColor: "black" }} />
+                <motion.div className="bar bar_1 bg-[black]" style={{ height: height1 }} />
+                <motion.div className="bar bar_2 bg-[black]" style={{ height: height2 }} />
+                <motion.div className="bar bar_3 bg-[black]" style={{ height: height3 }} />
+                <motion.div className="bar bar_4 bg-[black]" style={{ height: height4 }} />
+                <motion.div className="bar bar_5 bg-[black]" style={{ height: height5 }} />
+                <motion.div className="bar bar_5 bg-[black]" style={{ height: height5 }} />
             </div>
             <div style={{ backgroundColor: "black", width: "100%", height: "300px" }} ></div>
             <div className="bars" style={{ backgroundColor: "black" }} >
-                <motion.div className="bar bar_1" style={{ height: height1, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} >{content_1}</h1></motion.div>
-                <motion.div className="bar bar_2" style={{ height: height2, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} >{content_2}</h1></motion.div>
-                <motion.div className="bar bar_3" style={{ height: height3, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} >{content_3}</h1></motion.div>
+                <motion.div className="bar bar_1 content bg-[#F7F6F1]" style={{ height: height1 }} ><div> <span>250 <span>+</span> </span> <p>{content_1}</p> </div></motion.div>
+                <motion.div className="bar bar_2 content bg-[#F7F6F1]" style={{ height: height2 }} ><div> <span>250 <span>+</span> </span> <p>{content_2}</p> </div></motion.div>
+                <motion.div className="bar bar_3 content bg-[#F7F6F1]" style={{ height: height3 }} ><div> <span>250 <span>+</span> </span> <p>{content_3}</p> </div></motion.div>
+                <motion.div className="bar bar_4 content bg-[#F7F6F1]" style={{ height: height4 }} />
+                <motion.div className="bar bar_5 content bg-[#F7F6F1]" style={{ height: height5 }} />
+                <motion.div className="bar bar_5 content bg-[#F7F6F1]" style={{ height: height5 }} />
+            </div>
+
+            {/* <div className="bars" style={{ backgroundColor: "black" }} >
+                <motion.div className="bar bar_1" style={{ height: height1, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} dangerouslySetInnerHTML={{ __html: content_1 }} /></motion.div>
+                <motion.div className="bar bar_2" style={{ height: height2, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} dangerouslySetInnerHTML={{ __html: content_2 }} /></motion.div>
+                <motion.div className="bar bar_3" style={{ height: height3, backgroundColor: "white" }} ><h1 style={{ fontSize: "32px", color: "white", position: "relative", left: "100%", top: "8%", textWrap: "nowrap" }} dangerouslySetInnerHTML={{ __html: content_3 }} /></motion.div>
                 <motion.div className="bar bar_4" style={{ height: height4, backgroundColor: "white" }} />
                 <motion.div className="bar bar_5" style={{ height: height5, backgroundColor: "white" }} />
                 <motion.div className="bar bar_5" style={{ height: height5, backgroundColor: "white" }} />
-            </div>
+            </div> */}
         </section>
     );
 };
