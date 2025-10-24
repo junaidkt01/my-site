@@ -24,14 +24,17 @@ const Header = () => {
                 <Link href="/about" className="navlink hover:text-blue-600 transition-colors">
                     About
                 </Link>
-                <Link href="/services" className="navlink hover:text-blue-600 transition-colors">
-                    Services
-                </Link>
-                <Link href="/works" className="navlink hover:text-blue-600 transition-colors">
-                    Works
-                </Link>
                 <Link href="/blog" className="navlink hover:text-blue-600 transition-colors">
                     Blog
+                </Link>
+                <Link href="/faq" className="navlink hover:text-blue-600 transition-colors">
+                    FAQ
+                </Link>
+                <Link href="/portfolio" className="navlink hover:text-blue-600 transition-colors">
+                    Portfolio
+                </Link>
+                <Link href="/careers" className="navlink hover:text-blue-600 transition-colors">
+                    Careers
                 </Link>
                 <Link href="/contact" className="navlink hover:text-blue-600 transition-colors">
                     Contact

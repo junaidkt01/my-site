@@ -1,0 +1,25 @@
+.contact_section {
+    background-color: #242424;
+    color: #F7F6F1CC;
+
+    padding: 140px 140px;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    .contact_title_section {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .contact_inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        width: 100%;
+    }
+}

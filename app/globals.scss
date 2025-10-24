@@ -31,8 +31,6 @@ body {
 // Home
 
 .home_page {
-
-
     .who_we_are_section {
         height: 100dvh;
         background-color: #F7F6F1;
@@ -69,4 +67,11 @@ body {
 
         width: 100%;
     }
+}
+
+
+h1,
+h2,
+p {
+    margin: 0;
 }

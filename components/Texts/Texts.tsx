@@ -30,7 +30,7 @@ const TitleText = () => {
 
 export default TitleText;
 
-export const SectionTitle = () => {
+export const SectionTitle = ({ title_1, title_2, txt_color }: { title_1: string; title_2?: string; txt_color: string; }) => {
     return (
         <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -38,16 +38,19 @@ export const SectionTitle = () => {
             transition={{ duration: 1, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.6 }}
             className="section_title"
+            style={{ color: txt_color }}
         >
             <span className="">
-                Building Homes,
+                {title_1}
+                {/* Building Homes, */}
             </span>
 
             <motion.span initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
-                className="block" >Building Trust</motion.span>
+                className="block" >{title_2}</motion.span>
+            {/* className="block" >Building Trust</motion.span> */}
         </motion.h1>
     )
 }
