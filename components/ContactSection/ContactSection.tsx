@@ -7,9 +7,9 @@ import { PrimaryButton } from '../Button/Button'
 
 const ContactSection = () => {
     return (
-        <div className='contact_section' >
+        <div className='contact_section padding_section' >
             <div className='contact_title_section' >
-                <BreadCrumbs title='REFERRAL /' />
+                <BreadCrumbs title='REFERRAL' />
                 <SectionTitle title_1={"Refer a friend"} txt_color="#F7F6F1" />
             </div>
             <div className='contact_inputs' >

@@ -30,7 +30,7 @@ const TitleText = () => {
 
 export default TitleText;
 
-export const SectionTitle = ({ title_1, title_2, txt_color }: { title_1: string; title_2?: string; txt_color: string; }) => {
+export const SectionTitle = ({ title_1, title_2, txt_color }: { title_1: string; title_2?: string; txt_color?: string; }) => {
     return (
         <motion.h1
             initial={{ opacity: 0, y: 40 }}
