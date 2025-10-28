@@ -44,9 +44,12 @@ const Home = () => {
         <BreadCrumbs title='Portfolio' />
         <PropertyCarousel />
       </div>
-      <div className='home_reviews_section' >
+
+      <div className='home_reviews_section padding_section' >
+        <BreadCrumbs title='REVIEWS' />
         <Reviews />
       </div>
+
       <div className="home_contact_section" >
         <ContactSection />
       </div>

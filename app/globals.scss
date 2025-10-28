@@ -79,6 +79,12 @@ body {
   }
 }
 
+.home_reviews_section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 // .portfolio_page {
 //   padding: 50px 90px;
 // }

@@ -1,8 +1,35 @@
 .review_carousel {
   display: flex;
   flex-direction: column;
+  align-items: end;
+  gap: 33px;
+  overflow: hidden;
 
-  
+  .carousel_track {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel_inner {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+    will-change: transform;
+  }
+
+  .carousel_slide {
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    .carousel_slide {
+      flex-direction: column;
+    }
+  }
+
   .carousel_buttons {
     display: flex;
     align-items: center;
