@@ -106,3 +106,36 @@ h2,
 p {
   margin: 0;
 }
+
+// contact and careers page designs start
+.contact_careers_page {
+  display: flex;
+  align-items: start;
+  gap: 54px;
+
+  padding-top: 150px;
+
+  .page_contents {
+    // background-color: green;
+    width: 100%;
+    display: grid;
+    gap: 50px;
+
+    .contact_details_inputs_wrapper {
+      display: flex;
+
+      .contact_details {
+        // background-color: red;
+        width: 100%;
+      }
+      .contact_inputs {
+        // background-color: orange;
+        width: 100%;
+
+        display: grid;
+        gap: 30px;
+      }
+    }
+  }
+}
+// contact and careers page designs end

@@ -1,15 +1,51 @@
 .input_field {
-    input {
-        border-bottom: 1px solid #F7F6F1CC;
-        outline: none;
+  input {
+    border-bottom: 1px solid #f7f6f1cc;
+    outline: none;
 
-        // font-family: Brockmann;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 130%;
-        letter-spacing: -3%;
-        color: #F7F6F1CC;
-        width: 100%;
-        padding: 8px 0;
+    // font-family: Brockmann;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: -3%;
+    color: #f7f6f1cc;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  &.white_bg {
+    input {
+      color: #010205;
+      border-bottom: 1px solid #000000;
     }
+  }
+}
+
+.textarea_field {
+  label {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: -3%;
+  }
+  textarea {
+    border-bottom: 1px solid #f7f6f1cc;
+    outline: none;
+
+    // font-family: Brockmann;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: -3%;
+    color: #f7f6f1cc;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  &.white_bg {
+    textarea {
+      color: #010205;
+      border-bottom: 1px solid #000000;
+    }
+  }
 }
