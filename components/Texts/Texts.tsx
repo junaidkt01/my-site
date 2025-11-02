@@ -40,9 +40,8 @@ export const SectionTitle = ({ title_1, title_2, txt_color }: { title_1: string;
             className="section_title"
             style={{ color: txt_color }}
         >
-            <span className="">
+            <span className="" >
                 {title_1}
-                {/* Building Homes, */}
             </span>
 
             <motion.span initial={{ opacity: 0, y: 20 }}

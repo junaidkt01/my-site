@@ -113,6 +113,10 @@ p {
   align-items: start;
   gap: 54px;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
   padding-top: 150px;
 
   .page_contents {
@@ -123,6 +127,10 @@ p {
 
     .contact_details_inputs_wrapper {
       display: flex;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
 
       .contact_details {
         // background-color: red;

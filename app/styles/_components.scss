@@ -1,122 +1,395 @@
+/* ---------- Header base ---------- */
 .header {
-    backdrop-filter: blur(25px);
-    background-color: #24242466;
-
-    width: fit-content;
-    border-radius: 15px;
-
-    height: 57px;
-    padding: 0 20px;
-
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    justify-self: center;
-
-    position: fixed;
-    top: 45px;
-    z-index: 999;
-
-    .logo_icon {
-        height: 100%;
-
-        display: flex;
-        align-items: self-start;
-    }
-
-    .navlinks {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-
-        .navlink {
-            font-size: 16px;
-            color: #FFFFFF;
-        }
-    }
+  backdrop-filter: blur(25px);
+  background-color: #24242466;
+  width: fit-content;
+  border-radius: 15px;
+  height: 57px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  position: fixed;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1400;
 }
 
+@media screen and (max-width: 1080px) {
+  .header {
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    justify-content: space-between;
+    left: 0;
+    transform: none;
+    padding: 0 18px;
+  }
+}
+
+.logo_icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Desktop links */
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+@media screen and (max-width: 1080px) {
+  .navlinks {
+    display: none;
+  }
+}
+
+.navlink {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.navlink:hover {
+  color: #3cbbce;
+}
+
+/* Mobile menu icon */
+.menu_icon {
+  display: none;
+}
+.menu_icon p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+}
+@media screen and (max-width: 1080px) {
+  .menu_icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/* ---------- Overlay (darken + blur) ---------- */
+.menu_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* full viewport width */
+  height: 100vh; /* full viewport height */
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: background 0.3s ease, opacity 0.3s ease, backdrop-filter 0.3s ease;
+  z-index: 999; /* keep this just below your mobile menu (which might be 1000+) */
+}
+
+.menu_overlay.visible {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Mobile Menu (right → left) ---------- */
+/* We mirror the stepped clip-path horizontally so the steps face the left side of the panel */
+.mobile_menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 78%;
+  max-width: 420px;
+  height: 100vh;
+  background: #f9f9f5;
+  transition: right 0.45s cubic-bezier(0.2, 0.9, 0.3, 1);
+  z-index: 1350;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.35);
+
+  /* mirrored stepped shape (steps on the left edge of the panel) */
+  clip-path: polygon(
+    100% 0,
+    /* top-right */ 0% 0,
+    /* top-left */ 0% 20%,
+    /* step in */ 20% 20%,
+    20% 40%,
+    40% 40%,
+    40% 60%,
+    60% 60%,
+    60% 80%,
+    80% 80%,
+    80% 100%,
+    100% 100% /* bottom-right */
+  );
+
+  display: none;
+  flex-direction: column;
+
+  @media screen and (max-width: 1080px) {
+    display: flex;
+  }
+}
+
+/* open state slides in */
+.mobile_menu.open {
+  right: 0;
+}
+
+/* header inside menu: close btn placed on left inside panel (because panel comes from right) */
+.menu_header {
+  display: flex;
+  align-items: center;
+  padding: 20px 18px;
+  /* keep header simple - no title, only close button */
+}
+
+.close_btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #000;
+  padding: 6px 10px;
+}
+
+/* nav content: align to right side of menu */
+.mobile_nav {
+  padding: 40px 24px;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-end; /* push list to right */
+}
+
+/* List aligned to right edge */
+.mobile_nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: flex-end; /* right align items */
+  padding-right: 28px; /* distance from right edge */
+}
+
+.mobile_nav li a {
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  text-align: right;
+  display: block;
+  width: 100%;
+}
+
+.mobile_nav li a:hover {
+  color: #3cbbce;
+}
+
+/* make sure link clicks close menu (JS handles) */
+
+/* Slight responsive tweak for narrower screens */
+@media screen and (max-width: 420px) {
+  .mobile_menu {
+    width: 92%;
+  }
+  .mobile_nav ul {
+    gap: 18px;
+    padding-right: 18px;
+  }
+  .mobile_nav li a {
+    font-size: 18px;
+  }
+}
+
+// .header {
+//   backdrop-filter: blur(25px);
+//   background-color: #24242466;
+
+//   width: fit-content;
+//   border-radius: 15px;
+
+//   height: 57px;
+//   padding: 0 20px;
+
+//   display: flex;
+//   align-items: center;
+//   gap: 100px;
+//   justify-self: center;
+
+//   position: fixed;
+//   top: 45px;
+//   z-index: 999;
+
+//   @media screen and (max-width: 1080px) {
+//     top: 0;
+//     width: 100%;
+//     border-radius: 0;
+//     justify-content: space-between;
+//   }
+//   .menu_icon {
+//     display: none;
+
+//     p {
+//       // font-family: Plus Jakarta Sans;
+//       font-weight: 400;
+//       font-size: 14px;
+//       line-height: 180%;
+//       letter-spacing: 0%;
+//       text-align: center;
+//       color: #ffffff;
+//     }
+
+//     @media screen and (max-width: 1080px) {
+//       display: block;
+//     }
+//   }
+
+//   .logo_icon {
+//     height: 100%;
+
+//     display: flex;
+//     align-items: self-start;
+//   }
+
+//   .navlinks {
+//     display: flex;
+//     align-items: center;
+//     gap: 18px;
+
+//     @media screen and (max-width: 1080px) {
+//       display: none;
+//     }
+
+//     .navlink {
+//       font-size: 16px;
+//     }
+//   }
+// }
 
 .footer_section {
-    .footer_title_section {
-        background-color: #242424;
-        height: 512px;
+  .footer_title_section {
+    background-color: #242424;
+    height: 512px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      height: 400px;
+    }
+
+    h2 {
+      // font-family: Brockmann;
+      font-weight: 500;
+      font-size: clamp(40px, 4vw, 80px);
+      line-height: 130%;
+      letter-spacing: -3%;
+      color: #ffffff;
+
+      @media screen and (max-width: 768px) {
+        font-weight: 500;
+        line-height: 110%;
+      }
+    }
+  }
+
+  .contents_wrap {
+    background-color: #f7f6f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 100px 110px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo_decs_social {
+      display: flex;
+      flex-direction: column;
+
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      p {
+        // font-family: Brockmann;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0%;
+        color: #9b9b9c;
+      }
+    }
+
+    .navigations,
+    .licence {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      h2 {
+        // font-family: Brockmann;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: -1%;
+        color: #192031;
+      }
+
+      div {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
+        gap: 10px;
 
-        h2 {
-            // font-family: Brockmann;
-            font-weight: 500;
-            font-size: 80px;
-            line-height: 130%;
-            letter-spacing: -3%;
-            color: #FFFFFF;
+        p {
+          // font-family: Brockmann;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 100%;
+          letter-spacing: -2%;
+          color: #9b9b9c;
+          cursor: pointer;
         }
+      }
     }
 
-    .contents_wrap {
-        background-color: #F7F6F1;
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .details {
         display: flex;
-        justify-content: space-between;
-        align-items: start;
-        padding: 100px 110px;
+        flex-direction: column;
+        gap: 10px;
 
-        .logo_decs_social {
-            p {
-                // font-family: Brockmann;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 24px;
-                letter-spacing: 0%;
-                color: #9B9B9C;
-            }
+        @media screen and (max-width: 768px) {
+          align-items: center;
         }
+      }
 
-        .navigations,
-        .licence {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            h2 {
-                // font-family: Brockmann;
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 100%;
-                letter-spacing: -1%;
-                color: #192031;
-            }
-
-            div {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-
-                p {
-                    // font-family: Brockmann;
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 100%;
-                    letter-spacing: -2%;
-                    color: #9B9B9C;
-                    cursor: pointer;
-                }
-            }
+      h2 {
+        @media screen and (max-width: 768px) {
+          display: none;
         }
-
-        .contact {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            .details {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
+      }
     }
+  }
 }
